@@ -27,6 +27,15 @@ export default {
       product: (await fetchProductById(params.id)).data
     };
   },
+  head: {
+    title: 'Item Detail',
+    htmlAttrs: {
+      lang: 'en'
+    },
+    meta: [
+      { hid: 'description', name: 'description', content: 'Item Detail😎' },
+    ]
+  },
   methods: {
     async addToCart() {
       const { data } = await createCartItem(this.product);
