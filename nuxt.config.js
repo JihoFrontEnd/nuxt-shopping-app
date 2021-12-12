@@ -44,6 +44,6 @@ export default {
 
   // Server Settings
   server: {
-    port: 8080
+    port: process.env.NODE_ENV === "production" ? null : 8080,
   }
 }
