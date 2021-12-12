@@ -27,14 +27,14 @@ export default {
       product: (await fetchProductById(params.id)).data
     };
   },
-  head: {
-    title: 'Item Detail',
-    htmlAttrs: {
-      lang: 'en'
-    },
-    meta: [
-      { hid: 'description', name: 'description', content: 'Item Detail😎' },
-    ]
+  head() {
+    return {
+      title: `Item Detail - ${this.product.name}`,
+      htmlAttrs: { lang: 'en' },
+      meta: [
+        { hid: 'description', name: 'description', content: `Item Detail 😎 ${this.product.name}` },
+      ]
+    };
   },
   methods: {
     async addToCart() {
