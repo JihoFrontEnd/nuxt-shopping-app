@@ -10,13 +10,11 @@
 </template>
 
 <script>
-import axios from "axios";
-
 import ProductList from "@/components/ProductList.vue";
 import SearchInput from "@/components/SearchInput.vue";
 import CartIndicator from "~/components/CartIndicator.vue";
 
-import { fetchProductsByKeyword } from "@/api";
+import { fetchProducts, fetchProductsByKeyword } from "@/api";
 import { mapRandomImageUrl } from "~/utils/mapper";
 
 // CSR Rule
@@ -43,7 +41,7 @@ export default {
   // 반드시 pages 디렉토리 하위 페이지 컴포넌트에서만 호출할 수 있다.
   // 이 말인즉슨, props를 사용하는 구조로 작성되겠다.
   async asyncData() {
-    const { data } = await axios.get("http://localhost:3000/products");
+    const { data } = await fetchProducts();
     return {
       products: data.map(mapRandomImageUrl),
     };
