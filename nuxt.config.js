@@ -50,7 +50,7 @@ export default {
   // env config
   env: {
     baseURL: process.env.NODE_ENV === "production"
-      ? "http://my-json-server.typicode.com/JihoFrontEnd/nuxt-shopping-api"
+      ? "https://my-json-server.typicode.com/JihoFrontEnd/nuxt-shopping-api"
       : "http://localhost:3000",
   },
 
