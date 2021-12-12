@@ -33,6 +33,21 @@ export default {
       htmlAttrs: { lang: 'en' },
       meta: [
         { hid: 'description', name: 'description', content: `Item Detail 😎 ${this.product.name}` },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: '상품 상세 페이지'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `Item Detail 😎 ${this.product.name}`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.product.imageUrl
+        },
       ]
     };
   },
